@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+// console.log('hello')// constant time -O(1)
+var a=1 //O(1)
+if(a>=5){//O(1)
+    console.log('gretaer')//O(1)
+}
+else{//O(1)
+    console.log('small')//O(1)
+}
+// 5O(1)=O(1)  constant *cons=const
+
+// var x=9458
+// let y=x.toString().split('').map(Number)
+// const sum=y.reduce((total,digit)=>total+digit,0)
+// console.log(sum)
+
+function digits(num){
+    let sum=0
+    while(num>0){
+      const a= num%10
+      sum+=a
+      num=Math.floor(num/10)
+      //num=parseInt(num/10)
+    }
+    return sum
+}
+console.log(digits(7896))
+
+//---------------------------------------------
+var n=10
+for(let i=0;i<n;i++){
+    console.log('hi')
+}//here also O(n) depends on the length 
+
+
+//here the time complexity of while loop is diff.inside while 4 times executed. complexity depends on number of digits  O(n)
+//--------------------------------------------------
+var arr=[9,5,1,2,4]
+let sum=0
+for(let i=0;i<arr.length;i++){
+    sum+=arr[i]
+}
+console.log(sum)
+// O(n)
+//---------------------------------
+
+var arr2=[[1,2,3],[4,5,6],[7,8,9]]
+for(var i=0;i<arr2.length;i++){
+for(var j=0;j<arr2.length;j++){
+    console.log(arr2[i][j])
+    
+}
+}
+// O(N*N)
+var count=0;
+var n=100
+for(var i=n;i>0;i/=2){//outer loop log 
+    for(var j=0;j<i;j++){//O(log n)
+      count++  
+    }
+}
+//In each iteration of the inner loop, the count variable is incremented by 1.
+
+// The total count of the inner loop iterations across all the outer loop iterations can be calculated as follows:
+
+// 100 + 50 + 25 + ... + 1 = 100 * (1 + 0.5 + 0.25 + ... + 0.01)
+
+// This series is a geometric progression with a common ratio of 0.5 and a first term of 100. The sum of a geometric progression is given by the formula:
+//O(log n)
+</script>
+</body>
+</html>
+
+<!-- if the prgm executes more time more thna 20 sec , we need to optimis.
+run time analysis helps to make ur algorithm optimise
+// constant time  
+// 1.console.log take constant time
+// 2.if lese.simple assignment operator
+//3. arithmetic opertaion(=,-,*,/)
+
+represention is O(1)
+-->

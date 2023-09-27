@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class queue{
+            #item
+            #size
+
+            constructor(){
+                this.#item=[]
+                this.#size=0
+            }
+
+            enqueue(val){
+             this.#item.push(val)
+             this.#size+=1
+             }
+
+             dequeue(){
+                if(this.#size==0){
+                    return 'undef'
+                }
+                //shift removes first elem
+                var del=this.#item.shift()
+                console.log(del)
+                this.#size-=1
+                return del
+             }
+
+             front(){
+                return this.#item[0]
+             }
+
+             display(){
+                console.log(this.#item)
+             }
+             getsize(){
+                return this.#size
+            }
+            getitem(){
+                
+                var copy=[...this.#item] 
+                return copy
+            }
+        }
+
+        // let que= new queue()
+        //   que.enqueue(3)
+        //   que.enqueue(4)
+        //   que.enqueue(5)
+        //   que.enqueue(6)
+
+        //   que.display()
+        //  que.dequeue()
+        //  que.front()
+
+//          Problem One:
+// Sliding Window Maximum (Maximum of all subarrays of size k)
+// Given an array and an integer K, find the maximum for each and every contiguous subarray of size k.
+
+// Input: [1, 2, 3, 1, 4, 5, 2, 3, 6], K = 3 
+// Output: 3 3 4 5 5 5 6
+// Explanation: 
+// Maximum of 1, 2, 3 is 3
+// Maximum of 2, 3, 1 is 3
+// Maximum of 3, 1, 4 is 4
+// Maximum of 1, 4, 5 is 5
+// Maximum of 4, 5, 2 is 5 
+// Maximum of 5, 2, 3 is 5
+// Maximum of 2, 3, 6 is 6
+var que=new queue()
+var a=[8, 5, 10, 7, 9, 4, 15, 12, 90, 13]
+var k=4
+var res=[]
+
+for(var i=0;i<a.length;i++){
+  que.enqueue(a[i])
+}
+que.display()
+
+// var x=que.getitem()
+// console.log(x)
+// x.push(10)
+// que.display()
+//if u write push any numbers it alters the entire que. this is not the right way to do 
+//so make a copy and return it
+while(true){
+    var size=que.getsize()
+if(size<k){
+    break} //size is less thn k the break
+    //console.log('hi') infinity
+var elem=que.getitem().slice(0,k)//if u pass  array in math.max it result nan.so use spread operator
+console.log(elem)
+var max=Math.max(...elem)
+res.push(max)
+que.dequeue()
+}
+console.log(res)
+//while condition
+//que.getsize()>=k
+// 
+
+    </script>
+</body>
+</html>

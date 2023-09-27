@@ -1,0 +1,7 @@
+fifo
+addition-last
+removal first
+
+enqueue@insert a value to the end of q
+dequeue:removing vale from the start of q
+front :viewing front elemt

@@ -1,0 +1,88 @@
+data structure:
+organising data which enables to process in an efficient time and manner
+eG:tree,grapgh,link,stcak,quee,heap etc
+
+algorithm: set of rules to be performed to acheive the result/solve the prblm
+result can be acheivd by using ds
+
+datastructure type:
+primitive (num,strings,boolena,null ,undfined)
+ref(obj,arr)
+logical(ADT abstarct data type)(grapgh,tree,link,q,stack)
+it is also called user defined ds
+Each DS has its own property
+This property is generally unique
+
+internat has grapgh ds(multiple path)
+
+
+runtime anlaysis:
+algorithm should be efficient to handle big data in fasterst response
+there is algo which searches a data ina  array
+omega (searches found in first 10 search) sp best and fast response
+theta O(data in b/w the array)
+big o worst case(end of teh array /doesnt exist)
+so u should consider the worst to optimize the alogo
+
+arrays:
+array i a linaer ds in which u acn identify elemnets by index
+it can accept all data types in a aarary
+a=[1,2,3] hpmogeneous array
+b=['a','s']
+c=[1,'a'] hetero
+dynamic memoery allocation : in js and python u dont hav to fix the length. length increases when elemnts added on arary, viceversa
+array are required to store :even 1 million datastructure
+types: linear 
+       multidimensioanl (2d,3d,4d,nd)array
+
+common operation of arary:
+declare,instatntiate,initiate,insert,delete,traverse,accesing a cell,serach
+1------------array creation
+var ar=[]
+var arr1=new Array()
+var arr=[1,2]
+2------------insertion
+arr.push(10)
+console.log(arr)
+3-------------traversal
+for loop,for of,for each,while
+
+for (var i=0;i<arr.length;i++){
+    console.log(arr[i])
+}
+
+arr.forEach(function(in){
+console.log(in)
+})
+
+for (var i of arr){
+    console.log(i)
+}
+
+4-----------search------------------
+console.log(arr.indexOf(20)) //if it exist it will print the index, doesn't exist =-1
+
+5----delete-----------
+if u wnat to delete first item
+arr2.shift()
+arr.pop() //last elemnt deleted
+arr.slice(index,no of elements u want to delte from index)//u can insert or delete at teh same time 
+arr.slice(1,0,6,7,8,9) //if u dont want to delete put 1,0 then the no of elements u want to onsert
+slice accepts the algorithm
+
+write a program to find sum of largest and smallest no without sorting
+
+var a=[10,22,4,5,2,6,8,8,10,10,2]
+var small=arr[0]
+var large=arr[0]
+function array(arr){
+for(let i=0;i<arr.length;i++){
+    if(arr[i]<small){
+        small=arr[i]
+    }
+    if(arr[i]>large){
+        large=arr[i]
+    }
+}
+const b=small+large
+console.log(b)}

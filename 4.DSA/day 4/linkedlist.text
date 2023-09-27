@@ -1,0 +1,102 @@
+arrys stores in consecutive fasion 
+suppose we hv 5 elements of integer same 2 bytes-then 102,104,106...will be the fashion
+suppose user is using only few, remaining memories is unallocated,suppose in in python we need to address memoery before using an array
+to overcome this ineffiiceint usgae we then introduced linkedlist
+
+suppose we have amemory location of 5x5
+if u wnat to store 5 elemnets,each elemnt takes 2 block s10 blocks are required.in case of arrays we need 10 consecutive blocks which are not availble in this case
+since we can store in random way ,we ned a pointer/links to address the seq ,
+
+each block has both data and address of other elment 
+suppose 5 has address of next elemnt 2 .last noe we dont have any address/null/starting point
+
+linkedlist are dynamic (size of linkedlist can be changed during run time )
+
+Single Link List: In a single link list each node store the data of the node and reference to the next node
+Circular Single Link List: The last node of the link list refers to the first node
+Double Link List: Each node refers to previous and next node
+Circular Double Link List: Double Link List which is circular
+
+operation of linkedlist
+
+Creation of LL
+Traversal
+Insertion of Data
+Searching a given Value
+Deletion of Node
+Deletion of Linked List
+
+NEVER TRY CHANGE THE VALUE OF HEAD.IF HEAD IS LOST ENTIRE LL LOST
+INDERSTAND LINKS AND THEIR HEADS BEFORE CHANGING LINLS
+insertion--
+ 1-insert at start
+    EG :1--2--5--6 if user wants to add at the start
+    convert 4 into node,4 is already pointing to null
+    so new node is pointed to whereever the head is 
+     create a link first for 4 ,change next of this node poit to head
+ 2- insert at end
+    1--2--3--4  insert 5 at the end
+    make a copy t
+    now t.next =null
+    make t.text =n
+    5 is laready pointed to null
+ 3- inset at any location.change the pointer of 4 from 
+    1--3--7--9 insert 4 at position 2
+    make a copy of head to the temp variale
+    temp node is pointing to 3
+    temp.next =7
+    new node n (4) should point to t.next(4-7)
+    t.next should point to n (3-4)
+
+delete from start
+1-2--3--4 if u want to remove 1
+head=head.next
+
+delted from between
+2--3--4--5 if u want to delete 4
+t=head
+t=position(1)tht is 3
+t.next.next=5
+t.next=t.next.next
+
+del from end
+
+1--2--4--7
+create a temp 
+t.next!=null
+t=t.next
+t.next=null
+
+--------------------------
+Insertion at the Beginning:
+1. Create a new node with the given data.
+2. Set the "next" pointer of the new node to the current head.
+3. Update the head pointer to the new node.
+
+Deletion from the Beginning:
+1. If the list is empty, return an error.
+2. Update the head pointer to the second node.
+3. Deallocate the memory of the first node.
+
+Insertion at the End:
+1. Create a new node with the given data.
+2. Traverse the list to find the last node.
+3. Set the "next" pointer of the last node to the new node.
+
+Deletion from the End:
+1. If the list is empty, return an error.
+2. Traverse the list to find the second-to-last node.
+3. Update the "next" pointer of the second-to-last node to null.
+4. Deallocate the memory of the last node.
+
+Insertion in the Middle:
+1. Create a new node with the given data.
+2. Traverse the list to find the node just before the desired position.
+3. Set the "next" pointer of the new node to the next node.
+4. Update the "next" pointer of the previous node to the new node.
+
+Deletion from the Middle:
+1. If the list is empty, return an error.
+2. Traverse the list to find the node just before the node to be deleted.
+3. Update the "next" pointer of the previous node to skip the node to be deleted.
+4. Deallocate the memory of the deleted node.

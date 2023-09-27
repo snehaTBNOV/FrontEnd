@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        class Stack {
+            #items;
+            #size;
+            
+            constructor() {
+                this.#items = [];
+                this.#size = 0;
+            }
+            
+            push(val) {
+                this.#items.push(val);
+                this.#size += 1;
+            }
+            
+            pop() {
+                if (this.#size <= 0) {
+                    console.log("undefined") 
+                }
+                let c = this.#items.pop();
+                console.log(c);
+                this.#size -= 1;
+                return c
+            }
+            
+            peek() {
+                console.log(this.#items[this.#size - 1]);
+            }
+            
+            display() {
+                console.log(this.#items);
+            }
+
+            getsize(){
+                return this.#size
+            }
+        }
+
+        // let stack = new Stack();
+        // stack.push(30);
+        // stack.push(20);
+        // stack.push(90);
+        // stack.push(80);
+
+        // stack.display();
+        // stack.peek()
+
+        // stack.pop()
+
+        //reverse an array using stack---------------------------------------------------------------------
+
+        // let stack=[]
+        // let rev=[]
+        // function sta(arr){
+        //     for(let i of arr){
+        //         stack.push(i)
+        //     }
+        //     while(stack.length>0){
+        //         rev.push(stack.pop())
+        //     }
+        //     return rev
+        // }
+        // inp=[13, 11, 8, 4, 19, 22]
+        // console.log(sta(inp))
+
+        // let arr=[13, 11, 8, 4, 19, 22]
+        // let res=[]
+        // for(let i=0;i<arr.length;i++){
+        //     stack.push(arr[i])
+        // }
+        // stack.display();
+        // for(let i=0;i<arr.length;i++){
+        //     res.push(stack.pop())
+        // }
+        // console.log(res)
+
+        //--------------------------------------------------
+//         Problem Two:
+// Write a program to check for Balanced Brackets in an expression (well-formedness) using Stack. You have to examine whether the pairs and the orders of “{“, “}”, “(“, “)”, “[“, “]” are correct in expression.
+
+// Input: “[()]{}{[()()]()}” 
+// Output: Balanced
+
+// Input: “[(])” 
+// Output: Not Balanced 
+
+//here close brackets pop,open -push
+var exp='[()]{}{[()()]()}'
+var expstack=new Stack()
+function bal(exp){
+    for(let i=0;i<exp.length;i++){
+       var b=exp[i] 
+       if(b=='{'|| b=='('|| b=='['){
+        expstack.push(b)
+        continue
+       }
+      if(expstack.getsize()==0){  //suppose a closed bracket is the first symbol,then no need to check further. just check whether stack is empty /not
+        return false
+      }
+      var bracket=expstack.pop()
+      switch(b){
+        case ')':
+            if(bracket=='['|| bracket=='{'){
+             return false
+            }
+            break
+            case '}':
+            if(bracket=='['|| bracket=='('){
+             return false
+            }
+            break
+            case ']':
+            if(bracket=='('|| bracket=='{'){
+             return false
+            }
+            break
+      }
+    }
+    return expstack.getsize()==0?true:false
+}
+
+var res=bal(exp)
+if(res==true){
+    console.log('bal')
+}
+else{
+    console.log('unb')
+}
+
+
+
+
+</script>
+</body>
+</html>

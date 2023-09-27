@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <script>
+        //primitive----------------------------------
+    // console.clear()
+    // function add(val){
+    //     return val +10
+    // }
+    // var x=20
+    // console.log(add(x)) //30 thi sis called primitive.for this func it uses copy of x,not the exact x .so if u console x only u will get the actual val
+    // console.log(x)//20
+
+    //ref----------------------------------------
+
+    // var arr=[1,2,3,4,5]
+    // function push(a){
+    //     a.push(10)
+    // }
+    // console.log(arr)//here original element arr is changed .this is bcz arary is a ref 
+    // push(arr)//if i hv a flat if someone is coming it wont change my address
+//     var a=[10,22,4,5,2,6,8,8,10,10,2]
+
+//    var small=a[0]
+//    var large=a[0]
+//     for(let i of a ){
+//         if(i<small){
+//             small=i
+//         }
+//         if(i>large){
+//             large=i
+//         }
+//     }
+//     console.log(small+large)
+ //-----------------add small and largest no of arrays--------------------------
+// function array(arr){
+//     var small=arr[0]
+// var large=arr[0]
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]<small){
+//         small=arr[i]
+//     }
+//     if(arr[i]>large){
+//         large=arr[i]
+//     }
+// }
+// const b=small+large
+// console.log(b)}
+// var a=[10,22,4,5,2,6,8,8,10,10,2]
+// array(a)
+
+
+// const x=Math.min(...a) //... is necessary to spread
+// const y=Math.max(...a)
+// console.log(x+y)
+
+//------------------check whether it is array or not------------------------
+
+// var array=function(input){
+//     if(toString.call(input)==="[object Array]"){
+//         return true
+//         return false
+//     }
+// }
+// console.log(array('hggjj'))
+// console.log(array([1,2,3,4,5]))
+
+// function array(inp){
+// return Array.isArray(inp)
+// }
+// console.log(array('hggjj'))
+// console.log(array([1,2,3,4,5]))
+
+// //---------------------clone ----------------------------
+
+// function array(inp){
+//    return inp.slice(0)
+// }
+// console.log(array([1,2,3,4,5]))
+// //(...), which provides probably the easiest and most common way to create a shallow clone of an array.
+// let x=[3,4,5]
+// let y=[...x]
+// console.log(y)
+// const originalArray = [1, 2, 3];
+// const newArray = [...originalArray, 4, 5];
+//let k=[7,8,9,10]
+//let p=Array.from(k)
+//---------------------. Write a JavaScript function to get the first element of an array. Passing the parameter 'n' will return the first 'n' elements of the array.
+
+
+// function first(arr, n) {
+//   if (n < 0) {
+//     return [];
+//   }
+  
+//   return arr.slice(0, n);
+// }
+// let x=[9,2,3,4,5,6,7]
+// console.log(first(x,-1))
+// console.log(first(x,0))
+// console.log(first(x,1))
+// console.log(first(x,4))
+
+//----------------------------------------------find duplicats and its count and store in object----------
+// let arr=[1,2,4,5,2,6,8,8,10,10,10,2]
+
+// function count(val)
+// {
+//   let cnt=0;
+//   for(let i of arr){
+//     if(i==val){
+//       cnt++
+//     }
+//   }
+//   return cnt
+// }
+// let res={}
+// for(let i=0;i<arr.length;i++){
+//   let c=count(arr[i])
+//   if(c>1){
+//     res[arr[i]]=c
+//   }
+// }
+// console.log(res)
+
+//------------------------------input=7,o/p 1,6  6,1  2,5 5,2
+// let arr=[1,2,3,4,5,6,0]
+// function demo(arr,val){
+// for(let i of arr){
+//   let c=val-arr[i]
+//   console.log([arr[i],c])
+// }
+// }
+// demo(arr,6)
+// let arr=[1,2,4,5,2,6,8,8,10,10,10,2]
+// let k=7
+// let res=[]
+// //remove dupli
+// let unique=new Set(arr)
+// console.log(unique)
+// for(let i of unique){ //cany use in 
+// let pair=[]
+// for(let j of unique){
+//   if(i+j==k){
+//     pair.push(i,j)
+//   }
+// }
+// if(pair.length==2){
+// res.push(pair)}
+// }
+// console.log(res)
+
+//-------------------------------array in asc order , find the msing one
+
+// function findMissingNumbers(arr) {
+//     let result = [];
+//     for (let i = 1; i < arr.length; i++) {
+//         if (arr[i] - arr[i - 1] > 1) {
+//             for (let j = arr[i - 1] + 1; j < arr[i]; j++) {//for (let j = arr[i - 1] + 1; j < arr[i]; j++) {: If a gap is found, it enters a loop that iterates from the value of the previous element arr[i - 1] + 1 up to the current element arr[i] - 1.
+//                 result.push(j);
+//             }
+//         }
+//     }
+//     return result.length === 0 ? null : result.length === 1 ? result[0] : result;
+// }
+
+// console.log(findMissingNumbers([1, 2, 4, 5, 6, 8, 10]));  // Output: [3, 7, 9]
+// console.log(findMissingNumbers([55, 56, 57, 59]));       // Output: 58
+// console.log(findMissingNumbers([23, 24, 25, 26]));
+
+  //----------------------------------------reverese an array
+
+  function array(arr){
+    let start=0;
+    let end=arr.length-1;
+
+    while(start<end){
+      const temp=arr[start]
+      arr[start]=arr[end]
+      arr[end]=temp
+
+      start++
+      end--
+    }
+    return arr
+  }
+  const input = [13, 11, 8, 4, 19, 22];
+console.log(array(input));
+
+
+ //
+  </script>
+</body>
+</html>

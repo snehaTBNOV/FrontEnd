@@ -1,0 +1,19 @@
+operator orecedence
+{}[]()
+expo right to left 2 *3*4 --> 12*2
+mult/div (left to right) a*b/c  left to right whtever comes
+add/sub left to right
+
+infix easy to read for human
+but prefix and postfix doesnt hv precedence concepty. for machine
+
+
+infix to postfix cnversion
+a+b*c+d   abc*+d+
+staxck lifo
+algorithm:a+b*c+d (left to right )
+at A : push +
+at b:  push *(+*)  abc
+at c(+ <*): pop *    abc*
+at+d : + sign in stack has more prec than outside + .so pop + in stack  abc*+
+then push d 

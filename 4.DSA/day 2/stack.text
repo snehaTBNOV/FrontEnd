@@ -1,0 +1,14 @@
+
+last in first out
+stacks  linear logical  ds/user defined
+
+push  insertion
+pop  from last so 7 6 4 2 5
+peek there is a top value. wherever top is pointed peek will retun tht value
+like a bucket , 5 2,4,6,7
+
+Depending on how the expression is written, we can classify it into 3 categories –
+
+Prefix: An expression is called the prefix expression if the operator appears in the expression before the operands. Simply of the form (operator operand1 operand2). For example, +AB
+Infix: An expression is called the infix expression if the operator appears in the expression in between the operands. Simply of the form (operand1 operator operand2). For example, A+B
+Postfix: An expression is called the postfix expression if the operator appears in the expression after the operands. Simply of the form (operand1 operand2 operator). For example, AB+
